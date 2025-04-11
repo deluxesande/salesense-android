@@ -1,50 +1,126 @@
-# Welcome to your Expo app 👋
+# Salesense Mobile App
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+**Salesense** is a modern ERP mobile application that helps businesses manage sales, inventory, and payments. Integrated with **M-Pesa** for seamless mobile money transactions and **KRA** for automated tax compliance, Salesense empowers businesses to operate efficiently and stay compliant, right from their phones.
 
-## Get started
+This is the **React Native** app built using **Expo**.
 
-1. Install dependencies
+---
 
-   ```bash
-   npm install
-   ```
+## Features
 
-2. Start the app
+-   📈 **Sales Management:** Track and manage sales with real-time updates.
+-   🛒 **Inventory Management:** Monitor stock levels and receive low-stock alerts.
+-   💸 **M-Pesa Integration:** Accept and verify payments easily via mobile money.
+-   🧾 **KRA Integration:** Automatically generate and submit compliant invoices.
+-   📊 **Analytics and Reporting:** Access visual reports on business performance.
+-   🔒 **User Roles and Permissions:** Manage secure access based on roles (Admin, Salesperson, Accountant, etc.).
 
-   ```bash
-    npx expo start
-   ```
+---
 
-In the output, you'll find options to open the app in a
+## Tech Stack
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+-   **Frontend:** React Native (Expo)
+-   **State Management:** Zustand (as per project setup)
+-   **Networking:** Axios
+-   **Authentication:** JWT
+-   **APIs:** M-Pesa, KRA, Custom Backend
+-   **Navigation:** React Navigation
+-   **Form Handling:** Formik and Yup
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+---
 
-## Get a fresh project
+## Setup Instructions
 
-When you're ready, run:
+### 1. Clone the Repository
 
 ```bash
-npm run reset-project
+git clone https://github.com/deluxesande/salesense-android.git
+cd salesense-android
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+### 2. Install Dependencies
 
-## Learn more
+```bash
+npm install
+# or
+yarn install
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+### 3. Configure Environment Variables
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Create a `.env` file in the root of the project:
 
-## Join the community
+```env
+API_URL=https://your-backend-api.com
+MPESA_CONSUMER_KEY=your_consumer_key
+MPESA_CONSUMER_SECRET=your_consumer_secret
+KRA_API_KEY=your_kra_api_key
+```
 
-Join our community of developers creating universal apps.
+Make sure you're using a library like `expo-constants` or `react-native-dotenv` to load these variables.
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+### 4. Start the Expo Server
+
+```bash
+npx expo start
+```
+
+Then scan the QR code with your Expo Go app or run it on an Android emulator.
+
+---
+
+## Folder Structure
+
+The project follows the default **Expo** template structure:
+
+```
+/assets          # Images, fonts, and other static assets
+/components      # Reusable UI components
+/constants       # Constants like colors, sizes, API endpoints
+/navigation      # App navigation setup (React Navigation)
+/screens         # App screens
+/services        # API service handlers (M-Pesa, KRA, backend)
+/hooks           # Custom React hooks
+/utils           # Utility functions and helpers
+/App.js          # Root component
+/app.json        # Expo app configuration
+/babel.config.js # Babel configuration
+```
+
+---
+
+## API Integrations
+
+-   **M-Pesa API:** Initiates payments, processes callbacks, and checks transaction status.
+-   **KRA API:** Sends invoices and retrieves tax compliance data.
+-   **Backend API:** Handles authentication, user management, business logic, and data storage.
+
+---
+
+## Contributing
+
+Contributions are welcome! 🎉
+
+1. Fork the repository.
+2. Create a new branch (`git checkout -b feature/FeatureName`).
+3. Make your changes.
+4. Commit your changes (`git commit -m 'Add new feature'`).
+5. Push to the branch (`git push origin feature/FeatureName`).
+6. Open a Pull Request.
+
+---
+
+## License
+
+Licensed under the **Apache License 2.0**.  
+See the [LICENSE](LICENSE) file for more information.
+
+---
+
+## Contact
+
+For any questions or support:
+
+-   **Email:** deluxesande@gmail.com
+
+---
